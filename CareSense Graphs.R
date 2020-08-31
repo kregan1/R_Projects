@@ -88,90 +88,6 @@ plot(as.vector(Month[1:12]), Percent.Excellent[1:12], pch=1)
 Month[2]
 
 
-CWHSatis<-read.csv("CWH2019Satisfaction - Sheet1.csv")
-
-plot(CWHSatis$Month, CWHSatis$Percent.Excellent, ylab = "Percent Excellent",
-     main = "CWH Overall Satisfaction", xlab = "Month", col = "blue", type = "l")
-par(new = TRUE)
-plot(CWHSatis$Month, CWHSatis$Attendance, xaxt = "n", yaxt = "n",
-     ylab = "", xlab = "", col = "red", lty = 1, type = "l")
-axis(side = 4)
-mtext("", side = 4, line = 3)
-legend("topright", c("Percent Excellent", "Attendance"),
-       col = c("blue", "red"), lty = c(1, 1))
-
-plot(CWHSatis$Percent.Excellent, CWHSatis$Attendance, ylab = "Attendance", xlab = "Overall Satisfaction", 
-     main = " West Jordan Attendance vs. Satisfaction")
-
-abline(lm(CWHSatis$Attendance~CWHSatis$Percent.Excellent))
-
-plot(CWHSatis$Month, CWHSatis$Percent.Excellent, lty=1)
-
-
-
-DraperSatis<-read.csv("Draper2019Satisfaction - Sheet1-2.csv")
-
-plot(DraperSatis$Month, DraperSatis$Percent.Excellent, ylab = "Percent Excellent",
-     main = "Draper Overall Satisfaction", xlab = "Month", col = "blue", type = "l")
-par(new = TRUE)
-plot(DraperSatis$Month, DraperSatis$Attendance, xaxt = "n", yaxt = "n",
-     ylab = "", xlab = "", col = "red", lty = 1, type = "l")
-axis(side = 4)
-mtext("", side = 4, line = 3)
-legend("topright", c("Percent Excellent", "Attendance"),
-       col = c("blue", "red"), lty = c(1, 1))
-
-
-RivertonSatis<-read.csv("Riverton2019Satisfaction - Sheet1-3.csv")
-
-plot(RivertonSatis$Month, RivertonSatis$Percent.Excellent, ylab = "Percent Excellent",
-     main = "Riverton Overall Satisfaction", xlab = "Month", col = "blue", type = "l")
-par(new = TRUE)
-plot(RivertonSatis$Month, RivertonSatis$Attendance, xaxt = "n", yaxt = "n",
-     ylab = "", xlab = "", col = "red", lty = 1, type = "l")
-axis(side = 4)
-mtext("", side = 4, line = 3)
-legend("topright", c("Percent Excellent", "Attendance"),
-       col = c("blue", "red"), lty = c(1, 1))
-
-
-MurraySatis<-read.csv("Murray2019Satisfaction - Sheet1-2.csv")
-
-plot(MurraySatis$Month, MurraySatis$Percent.Excellent, ylab = "Percent Excellent",
-     main = "Murray Overall Satisfaction", xlab = "Month", col = "blue", type = "l")
-par(new = TRUE)
-plot(MurraySatis$Month, MurraySatis$Attendance, xaxt = "n", yaxt = "n",
-     ylab = "", xlab = "", col = "red", lty = 1, type = "l")
-axis(side = 4)
-mtext("", side = 4, line = 3)
-legend("topright", c("Percent Excellent", "Attendance"),
-       col = c("blue", "red"), lty = c(1, 1))
-
-
-SSSatis<-read.csv("SS2019Satisfaction - Sheet1-2.csv")
-
-plot(SSSatis$Month, SSSatis$Percent.Excellent, ylab = "Percent Excellent",
-     main = "SS Overall Satisfaction", xlab = "Month", col = "blue", type = "l")
-par(new = TRUE)
-plot(SSSatis$Month, SSSatis$Attendance, xaxt = "n", yaxt = "n",
-     ylab = "", xlab = "", col = "red", lty = 1, type = "l")
-axis(side = 4)
-mtext("", side = 4, line = 3)
-legend("topright", c("Percent Excellent", "Attendance"),
-       col = c("blue", "red"), lty = c(1, 1))
-
-SBSatis<-read.csv("SB2019Satisfaction - Sheet1.csv")
-
-plot(SBSatis$Month, SBSatis$Percent.Excellent, ylab = "Percent Excellent",
-     main = "SB Overall Satisfaction", xlab = "Month", col = "blue", type = "l")
-par(new = TRUE)
-plot(SBSatis$Month, SBSatis$Attendance, xaxt = "n", yaxt = "n",
-     ylab = "", xlab = "", col = "red", lty = 1, type = "l")
-axis(side = 4)
-mtext("", side = 4, line = 3)
-legend("topright", c("Percent Excellent", "Attendance"),
-       col = c("blue", "red"), lty = c(1, 1))
-
 
 ###This plots percent rated excellent for all clinics for each month. We did this to provide some
 ###information for the directors in case they suspect something was happening during those months. 
@@ -193,7 +109,7 @@ legend(1,88, legend = c("CWH", "Draper", "Murray", "Riverton", "Sandy", "SS", "S
 
 
 
-
+#These Graphs are for individual clinics but will look at Knowledge of the therapists for Director's meeting
 CWHKnow<-read.csv("CWH2019Knowledge - Sheet1.csv")
 
 plot(CWHKnow$Month, CWHKnow$Percent.Excellent, ylab = "Percent Excellent",
