@@ -1,3 +1,5 @@
+#Creates an R shiny app with a simplified version of personal retirement model
+#This is still a work in progress
 library(shiny)
 currentAge=33
 arrayCash = rep(0,120);arrayCash[currentAge]=20000
@@ -8,7 +10,7 @@ cashExpenses=0; retirementExpenses=0
 
 # Define UI ----
 ui <- fluidPage(
-   titlePanel("Can We Quit Yet?"),
+   titlePanel("Can I Retire Yet?"),
 
   sidebarLayout(
     sidebarPanel(
