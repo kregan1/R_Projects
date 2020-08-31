@@ -4,7 +4,7 @@ setwd("/Users/kerryregan/Desktop/CareSense Data")
 library(readr)
 
 
-
+#Checking up on WJ Satisfaction for 2019
 WJSatis<-read.csv("WestJordan2019Satisfaction - Sheet1.csv")
 
 plot(WJSatis$Month, WJSatis$Percent.Excellent, ylab = "Percent Excellent",
@@ -15,22 +15,20 @@ plot(WJSatis$Month, WJSatis$Attendance, xaxt = "n", yaxt = "n",
 axis(side = 4)
 mtext("", side = 4, line = 3)
 
-
-
-
 legend("topleft", c("beaver1", "beaver2"),
        col = c("blue", "red"), lty = c(1, 2))
+##################################################################
 
 
 
-
+#Checking each clinic to see if they are hitting MCID within clinic average utalization
 LEFSv1<-read.vsv("LEFS1vDiff - Sheet1.csv")
 
 LEFS<-read.csv("ClinicLEFSDiff.csv", col_types(Clinic=col_character(), Visits=col_number(), Difference=col_number())
 
 plot(subset(LEFS$Visits,LEFS$Clinic=="Sandy"), subset(LEFS$Difference,LEFS$Clinic=="Sandy"), ylim = c(-10,50), xlim = c(5,50), ylab = "Difference", xlab = "Visits"), main = "Difference in LEFS vs. Visit Number")
 
-
+#Checking up on attendance VS phone - Did clinics have lower attendance when phones were unsatisfactory - clinics are not significantly different form each other
 PhoneVAttendance<-read.csv("AttendancevsPhone.csv", col_types=cols(Clinic=col_character(), Attendance=col_number(), Phone=col_number()))
 
 KnowledgeVSAttendance<-read_csv("AttendanceVsKnowledge.csv", col_types=cols(Clinic=col_character(), Attendance=col_number(), Knowledge=col_number()))
